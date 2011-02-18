@@ -1,0 +1,11 @@
+This is an example of how to do oauth in Java, via freelancer.com's api. 
+No libraries are used outside of apache codec for encryption.
+To get started you'll need to create a consumer key at freelancer.com and enter the token and secret they provide 
+into applicationContext.xml. After that just do a mvn package and deploy the war. 
+Then bring up index.html which has 2 example link going through the proxy (which will trigger the oauth handshake)
+From there I suggest stepping through the java. The only part that is confusing is bouncing 
+around between my various servlets and freelancer. This is just how the oauth handshake works, 
+read some stuff on oauth first and this will become much clearer. 
+I wish I had some nice code like this to follow along with when trying to learn and write my own, so here it is!
+Also please understand this is just a quick example I used to learn, so code harsh code critics ;)
+If you have a compliant send me a pull request, I promise to take almost anything.
