@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+  <bean id="freelancer" class="com.panic.beans.Provider">
+  	<constructor-arg type="String" value="http://api.sandbox.freelancer.com/RequestRequestToken/requestRequestToken.xml"/>
+    <constructor-arg type="String" value="http://api.sandbox.freelancer.com/RequestAccessToken/requestAccessToken.xml"/>
+    <constructor-arg type="String" value="http://www.sandbox.freelancer.com/users/api-token/auth.php"/>
+    <constructor-arg type="String" value="HMAC-SHA1"/>
+    <constructor-arg type="String" value="1.0"/>
+  </bean>
+  <bean id="panic" class="com.panic.beans.Consumer" scope="request">
+  	<constructor-arg type="String" value="GET"/>
+  	<constructor-arg type="String" value="{ClientToken}"/>
+    <constructor-arg type="String" value="{ClientSecret}"/>
+    <constructor-arg type="String" value="http://localhost:8080/Freelancer/servlet/OAuthCallback?"/>
+  </bean>
+</beans>
